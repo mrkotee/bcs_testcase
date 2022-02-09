@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        | BCS TestCase
+        {% endblock %}
+    </title>
+</head>
+<body>
+{% if user.is_authenticated %}
+<a href="/admin/logout/">LOGOUT</a>
+{% endif %}
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

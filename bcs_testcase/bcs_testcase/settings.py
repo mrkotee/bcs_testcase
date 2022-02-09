@@ -123,3 +123,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+BCS_IP = "http://45.32.232.25:3669"
+BCS_USER = "bcs_tester"
+BCS_PSW = "iLoveBCS"
+BCS_WALLET = "BABwZ2m2egkav6Rdaphw8pddU9hQ1eHKZJ"
+BCS_WALLET_PRV = "Ky55QyyFLFqvr6kvL1gQkZro9FL3R6dr8i1TYncWD7TTHNMzikJt"

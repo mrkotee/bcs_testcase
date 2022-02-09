@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin {{block.super}}
+{% endblock %}
+
+{% block content %}
+
+<div style="text-align: center;">
+
+    <div>
+        Transactions: <span>
+        <form action="/update_txs/" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">Check for new transactions</button>
+        </form></span>
+        <table>
+            <tr><th>ID</th><th>Description</th></tr>
+            {% for tx in transactions %}
+            <tr>
+                <td>{{ tx.tx_id }}</td>
+                <td>
+                    <form action="/admin/change_desc/{{ tx.tx_id }}/" method="post">
+                        {% csrf_token %}
+                        <input type="text" name="description" value="{{ tx.description }}">
+                        <span><button type="submit">save description</button></span>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+</div>
+
+{% endblock %}
